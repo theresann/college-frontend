@@ -1,5 +1,11 @@
+/* body {
+  padding-top: 70px;
+} */
+
 .App {
   text-align: center;
+  padding: 2em;
+  padding-top: 70px;
 }
 
 .App-logo {
@@ -9,14 +15,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  color: #282c34;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: white;
 }
 
 .App-link {
@@ -30,4 +36,69 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.sidebar {
+  line-height: 30px;
+}
+.sidebar a{
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  font-weight: bold;
+}
+
+.contacts {
+  padding: 10px;
+  padding-top: 70px;
+  border-right: 1px solid lightgrey;
+  line-height: 20px;
+  text-align: left;
+  width: 20%;
+  height: 100%
+}
+
+.tab {
+  margin-left: 70px
+}
+
+.contact {
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+}
+
+.contact:hover{
+  background: #FF7F11;
+  color: white;
+}
+
+.templates {
+  padding: 2.5em;
+  text-align: left;
+}
+
+.template {
+  padding-left: 20px;
+}
+
+.template:hover {
+  background: none;
+  color: inherit;
+  font-style: italic;
+}
+
+.right {
+  text-align: right;
+}
+
+button {
+  padding: 0.75em 1em 0.75em 1em;
+  border-radius: 5px;
+}
+
+.paddingleft {
+  padding-left: 15px;
 }

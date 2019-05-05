@@ -1,0 +1,84 @@
+
+.message {
+  border-radius: 5px;
+  padding: 8px;
+  display: inline-block;
+  max-width: 50%;
+  margin: 2px;
+}
+
+.received {
+  background-color: lightgrey;
+}
+
+.sent {
+  background-color: #007BFF;
+  color: white;
+  text-align: left;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:calc(40px + 22vw);
+	background-color:#007BFF;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  padding: 15px;
+}
+
+.float2{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:calc(120px + 22vw);
+	background-color:#FF7F11;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  padding: 15px;
+  padding-left: 17px;
+}
+
+.sideinfo {
+  height: calc(100vh - 60px);
+  border-left: 1px solid lightgrey;
+  padding: 30px;
+}
+
+.contact-icon {
+  width:60px;
+  /* height:60px; */
+  margin: auto;
+  border-radius:50px;
+  background-color: lightgrey;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 13px;
+}
+
+.field {
+
+  width: 45vw;
+  border-radius: 4px;
+  border: 1px solid grey;
+  /* border: none; */
+  position: fixed;
+  height: 50px;
+  bottom: 43px;
+  right:calc(200px + 22vw);
+  background-color: rgba(255,255,255,0.3);
+  transition: 0.3s all;
+  padding: 10px;
+}
+
+.field:hover{
+  box-shadow: 2px 2px 3px #999;
+}

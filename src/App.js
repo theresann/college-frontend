@@ -62,14 +62,16 @@ class App extends Component {
           </Nav>
         </Navbar>
         <Router>
-          <div className="App">
+          <div>
             <Switch>
               <Route path="/" exact component={Home} />
+              <div class="App">
               <Route path="/send/" component={Send} />
               <Route path="/history/" component={History} />
               <Route path="/createaccount/" component={CreateAccount} />
               <Route path="/events/" component={Events} />
               <Route path="/login/" component={LogIn} />
+              </div>
             </Switch>
           </div>
         </Router>

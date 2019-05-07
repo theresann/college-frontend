@@ -1,0 +1,21 @@
+.landing {
+  margin: none;
+  padding: 5em;
+  height: 105vh;
+
+}
+
+.blue {
+  background: #007bff;
+  color: white;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 70px;
+  padding-top: 40vh;
+}
+
+.subheading {
+  font-size: 20px;
+}

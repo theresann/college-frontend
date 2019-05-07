@@ -71,7 +71,8 @@ a:hover{
 }
 
 .contact:hover{
-  background: #FF7F11;
+  /* background: #FF7F11; */
+  background: #FF8C28;
   color: white;
 }
 
@@ -87,7 +88,7 @@ a:hover{
 .template:hover {
   background: none;
   color: inherit;
-  font-style: italic;
+  font-weight: 500;
 }
 
 .right {

@@ -79,7 +79,8 @@ class Send extends Component {
       super(props);
       this.state = {
         sidebarDocked: mql.matches,
-        sidebarOpen: false
+        sidebarOpen: false,
+        numChosen: 0
       };
 
       this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
@@ -101,10 +102,19 @@ class Send extends Component {
     mediaQueryChanged() {
       this.setState({ sidebarDocked: mql.matches, sidebarOpen: false });
     }
+
+    handleOptionChange(event) {
+      if (event.target.value) {
+        this.setState({numChosen: this.state.numChosen + 1});
+      }
+      else {
+        this.setState({numChosen: this.state.numChosen - 1});
+      }
+    }
   render() {
     return(
       <Sidebar
-      sidebar={ <Contacts/> }
+      sidebar={ <Contacts onchange={this.handleOptionChange.bind(this)}/> }
       open={this.state.sidebarOpen}
       docked={this.state.sidebarDocked}
       onSetOpen={this.onSetSidebarOpen}
@@ -161,7 +171,7 @@ class Send extends Component {
            </label>
          </div>
          <div className="right">
-            <Button variant="outline-primary"> Send </Button>
+            <Button variant="outline-primary"> Send to {this.state.numChosen} people</Button>
          </div>
 
         </header>

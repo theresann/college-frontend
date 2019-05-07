@@ -2,18 +2,22 @@ import React, { Component } from 'react';
 import Sidebar from "react-sidebar";
 import {MdLiveHelp, MdSend} from 'react-icons/md';
 import Grid from '@material-ui/core/Grid';
+import Button from 'react-bootstrap/Button';
 import './messages.css';
 
 class Name extends Component {
-  changeName(props) {
-    // document.getElementById("current-convo").innerHTML =  props.label;
-    console.log("clicked");
-    console.log(props.label);
-
-  }
+  // changeName(props) {
+  //   // document.getElementById("current-convo").innerHTML =  props.label;
+  //   console.log("clicked");
+  //   console.log(props.label);
+  //
+  // }
   render() {
     return (
-        <div className="contact paddingleft" onClick={this.changeName(this.props)}>{this.props.label}</div>
+      <div>
+        <button className="contact paddingleft" onClick={this.props.onClick}
+        value={this.props.label}>{this.props.label}</button>
+        </div>
     )
   }
 }
@@ -31,7 +35,7 @@ class Names extends Component {
         // }
         // //Create the parent and add the children
         const labelname = "Contact Name " + i
-        table.push(<Name label={labelname}/>)
+        table.push(<Name label={labelname} onClick={this.props.onClick}/>)
       }
       return table
   }
@@ -113,7 +117,7 @@ class History extends Component {
         sidebarDocked: mql.matches,
         sidebarOpen: false,
         height: 0,
-        contactChosen: 0,
+        contactChosen: "Contact Name",
       };
 
       this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
@@ -139,10 +143,14 @@ class History extends Component {
     updateWindowDimensions() {
       this.setState({height: window.innerHeight });
     }
+
+    chooseContact(event) {
+      this.setState({contactChosen: event.target.value});
+    }
   render() {
     return(
       <Sidebar
-      sidebar={ <Names/> }
+      sidebar={ <Names onClick={this.chooseContact.bind(this)}/> }
       open={this.state.sidebarOpen}
       docked={this.state.sidebarDocked}
       onSetOpen={this.onSetSidebarOpen}
@@ -181,8 +189,8 @@ class History extends Component {
           </Grid>
           <Grid item xs={3} className="sideinfo">
             <div style={{'textAlign':'center', 'paddingLeft': '10px', 'paddingTop': '40px'}}>
-              <div className="contact-icon">FL</div> <br/>
-              <b id="current-convo">Contact Name</b> <br/><br/>
+              <div className="contact-icon" onClick={this.chooseContact.bind(this)}>FL</div> <br/>
+              <b id="current-convo">{this.state.contactChosen}</b> <br/><br/>
               Registered to vote? <br/>
               <RadioButton content="yes" />
               <RadioButton content="no" />

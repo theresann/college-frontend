@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Sidebar from "react-sidebar";
 import './account.css';
 import Grid from '@material-ui/core/Grid';
 import Button from 'react-bootstrap/Button';
@@ -17,15 +16,15 @@ class Field extends Component {
   }
 }
 
-class HalfField extends Component {
+class Password extends Component {
   render(){
-    const classname = this.props.side=='left' ? "formfield halffield leftfield" : "formfield halffield rightfield";
     return(
       <input
-        className= {classname}
+        className="formfield"
         id={this.props.id}
-        type="text"
+        type="password"
         placeholder={this.props.placeholder}
+        minlength="8"
       />
     )
   }
@@ -38,8 +37,8 @@ class CreateAccount extends Component {
         <Grid item xs={4}></Grid>
         <Grid item xs={4} style={{'margin': '25px'}}>
           <b>Create New Account</b> <br/>
-          Please fill out all of the fields below. <br/><br/>
-
+          <a href="/">Already have an account? Click here to login </a>
+          <br/><br/>
           <Grid container spacing={16}>
             <Grid item xs={6}><Field id="first" placeholder="first name" /></Grid>
             <Grid item xs={6}><Field id="last" placeholder="last name" /></Grid>
@@ -47,11 +46,15 @@ class CreateAccount extends Component {
           <Field id="email" placeholder="email address" />
           <Field id="phone" placeholder="phone number" />
           <Field id="school" placeholder="college affiliation" />
-          <Field id="password" placeholder="enter new password here" />
+          <Grid container spacing={16}>
+            <Grid item xs={6}><Password id="password" placeholder="new password" /></Grid>
+            <Grid item xs={6}><Password id="password" placeholder="confirm password" /></Grid>
+          </Grid>
 
-          <Button variant="primary" className="submit">Create Account</Button> <br/>
+          Password must be a minimum of 8 characters. <br/>
 
-          <a href="/">Already have an account? Click here to login </a>
+          <Button variant="primary" className="submit" value="submit">Create Account</Button> <br/>
+
         </Grid>
         <Grid item xs={4}></Grid>
       </Grid>
